@@ -1,64 +1,23 @@
-# ECommerce Database
-
-Este repositório contém um exemplo simplificado de um modelo de banco de dados para um ECommerce. Lembrando que nao irei diferir os projetos conceitual e logico, apenas estou demonstrando uma estrutura simples para alguem que queira criar seu primeiro ECommerce. 
+# README
 
 ## Estrutura do Banco de Dados
 
-O banco de dados consiste nas seguintes tabelas:
+O banco de dados é composto pelas seguintes tabelas:
 
-- `Customers`: Armazena informações sobre os clientes.
-- `Products`: Armazena informações sobre os produtos.
-- `Orders`: Armazena informações sobre os pedidos.
-- `OrderDetails`: Armazena informações sobre os itens individuais em cada pedido.
-
-### Tabela Customers
-
-| Campo        | Tipo         |
-|--------------|--------------|
-| CustomerID   | int NOT NULL |
-| CustomerName | varchar(255) NOT NULL |
-| ContactName  | varchar(255) |
-| Country      | varchar(255) |
-| Email        | varchar(255) |
-
-### Tabela Products
-
-| Campo       | Tipo         |
-|-------------|--------------|
-| ProductID   | int NOT NULL |
-| ProductName | varchar(255) NOT NULL |
-| SupplierID  | int |
-| CategoryID  | int |
-| Unit        | varchar(255) |
-| Price       | decimal |
-
-### Tabela Orders
-
-| Campo       | Tipo         |
-|-------------|--------------|
-| OrderID     | int NOT NULL |
-| CustomerID  | int |
-| OrderDate   | date NOT NULL |
-| OrderStatus | varchar(255) |
-
-### Tabela OrderDetails
-
-| Campo         | Tipo         |
-|---------------|--------------|
-| OrderDetailID | int NOT NULL |
-| OrderID       | int NOT NULL |
-| ProductID     | int NOT NULL |
-| Quantity      | int |
-
-## Diagrama do Banco de Dados
-
-Um diagrama representando a estrutura do banco de dados foi criado e pode ser encontrado neste repositório.
+1. **Cliente**: Armazena informações sobre os clientes, incluindo ID do cliente, nome, CPF/CNPJ, endereço e frete.
+2. **Fornecedor**: Armazena informações sobre os fornecedores, incluindo ID do fornecedor e nome.
+3. **Produto**: Armazena informações sobre os produtos, incluindo ID do produto, nome, preço, estoque e ID do fornecedor.
+4. **Pedido**: Armazena informações sobre os pedidos, incluindo ID do pedido, ID do cliente, data do pedido, status de entrega e código de rastreamento.
+5. **DetalhesPedido**: Armazena informações sobre os detalhes dos pedidos, incluindo ID dos detalhes do pedido, ID do pedido, ID do produto e quantidade.
+6. **Pagamento**: Armazena informações sobre os pagamentos, incluindo ID do pagamento, ID do cliente e forma de pagamento.
 
 ## Dados de Teste
 
-Dados de teste foram inseridos nas tabelas para facilitar a verificação e validação da estrutura do banco de dados.
+Os dados de teste inseridos no banco de dados são os seguintes:
 
-## Contribuições
-
-Por favor, abra uma issue ou pull request para sugestões de melhorias ou correções.
-
+- **Clientes**: 5 clientes foram inseridos com nomes 'Cliente 1' a 'Cliente 5', CPF/CNPJ variando de '123.456.789-10' a '567.891.234-50', endereços 'Rua 1, 123' a 'Rua 5, 567' e frete variando de 10.00 a 30.00.
+- **Fornecedores**: 2 fornecedores foram inseridos com nomes 'Fornecedor 1' e 'Fornecedor 2'.
+- **Produtos**: 5 produtos foram inseridos com nomes 'Produto 1' a 'Produto 5', preços variando de 100.00 a 500.00, estoque variando de 10 a 50 e IDs de fornecedor sendo 1 ou 2.
+- **Pedidos**: 5 pedidos foram inseridos com IDs de cliente variando de 1 a 5, data do pedido sendo a data atual (CURDATE()), status de entrega variando entre 'Em trânsito', 'Entregue' e 'Aguardando envio', e códigos de rastreamento variados.
+- **DetalhesPedido**: 5 detalhes de pedidos foram inseridos com IDs de pedido e produto variando de 1 a 5 e quantidade sendo igual ao respectivo ID.
+- **Pagamentos**: 5 pagamentos foram inseridos com IDs de cliente variando de 1 a 5 e formas de pagamento sendo 'Cartão de Crédito', 'Boleto Bancário', 'Cartão de Débito', 'PayPal' e novamente 'Cartão de Crédito'.
