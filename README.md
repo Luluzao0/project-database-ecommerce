@@ -60,4 +60,5 @@ Dados de teste foram inseridos nas tabelas para facilitar a verificação e vali
 
 ## Contribuições
 
-Contribuições são bem-vindas. Por favor, abra uma issue ou pull request para sugestões de melhorias ou correções.
+Por favor, abra uma issue ou pull request para sugestões de melhorias ou correções.
+
